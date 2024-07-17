@@ -16,6 +16,7 @@
     "gulp-cli": "^3.0.0"
   },
   "devDependencies": {
+    "browser-sync": "^3.0.2",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "pug": "^3.0.3",
