@@ -1,11 +1,13 @@
-const {
+import {
   src, dest,
   parallel, series,
   watch
-} = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const pug = require('gulp-pug');
-const browserSync = require('browser-sync').create();
+} from 'gulp';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import pug from 'gulp-pug';
+import browserSync from 'browser-sync';
 
 const compileSCSS = () => {
   return src('src/*.scss')
@@ -15,7 +17,7 @@ const compileSCSS = () => {
 }
 
 const compilePug = () => {
-  return src('src/*.pug')
+  return src('src/layout/*.pug')
     .pipe(pug())
     .pipe(dest('build/'))
     .pipe(browserSync.stream());
@@ -27,9 +29,9 @@ const browserSyncJob = () => {
   });
 
   watch('src/*.scss', compileSCSS);
-  watch('src/*.pug', compilePug);
+  watch('src/layout/*.pug', compilePug);
 }
 
-exports.build = parallel(compileSCSS, compilePug);
-exports.server = browserSyncJob;
-exports.development = series(build, server);
+export const build = parallel(compileSCSS, compilePug);
+export const server = browserSyncJob;
+export const development = series(build, server);
