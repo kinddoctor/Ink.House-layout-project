@@ -1,0 +1,47 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Ink.House Layout
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(name="description" content="")
+    link(rel="stylesheet" type="text/css" href="style.css") 
+  body
+    header
+      div //- logo
+        div
+        p Ink. House
+      nav
+        button Репродукции
+        button Новинки
+        button О нас
+        button
+    main
+      section
+        div //- background image
+        div
+          h1 Реплики картин от
+            span Ink. House
+          p.
+            Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.
+          button Продукция
+      section
+        div //- подписи
+          span Репродукции
+          div
+            div
+              label(for="")
+              input
+            div
+              label(for="")
+              input
+            div
+              label(for="")
+              input
+        div //- контейнер франц карточек
+          include frenchPaintings
+        div //- контейнер немец карточек
+        div //- контейнер англ карточек
+          
+
+

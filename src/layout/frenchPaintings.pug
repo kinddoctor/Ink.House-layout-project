@@ -1,0 +1,54 @@
+-
+  const data = [
+    { 
+    pictureAuthor: 'Марсель Руссо',
+    pictureName: 'Охота Амура',
+    about: 'Холст, масло (50х80) ',
+    price: '14 500 руб',
+    pathToImg: '../img/ .jpg',
+    },
+    {
+    pictureAuthor: 'Анри Селин',
+    pictureName: 'Дама с собачкой',
+    about: 'Акрил, бумага (50х80) ',
+    price: '16 500 руб',
+    },
+    {
+    pictureAuthor: 'Франсуа Дюпон',
+    pictureName: 'Процедура',
+    about: 'Цветная литография (40х60)',
+    price: '20 000 руб',
+    },
+    {
+    pictureAuthor: 'Луи Детуш',
+    pictureName: 'Роза',
+    about: 'Бумага, акрил (50х80)',
+    price: '12 000 руб',
+    },
+    {
+    pictureAuthor: 'Франсуа Дюпон',
+    pictureName: 'Птичья трапеза',
+    about: 'Цветная литография (40х60)',
+    price: '22 500 руб',
+    },
+    {
+    pictureAuthor: 'Пьер Моранж',
+    pictureName: 'Пейзаж с рыбой',
+    about: 'Цветная литография (40х60)',
+    price: '20 000 руб',
+    },
+  ];
+
+mixin card(cardData)
+  div
+    img
+      
+    span= cardData.pictureAuthor
+    b= cardData.pictureName
+    span= cardData.about
+    span= cardData.price
+    button В корзину
+
+div
+  each cardData in data
+    +card(cardData)
