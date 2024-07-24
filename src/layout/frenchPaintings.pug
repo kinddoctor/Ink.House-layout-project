@@ -5,44 +5,48 @@
     pictureName: 'Охота Амура',
     about: 'Холст, масло (50х80) ',
     price: '14 500 руб',
-    pathToImg: '../img/ .jpg',
+    pathToImg: './amour`s hunt.jpg',
     },
     {
     pictureAuthor: 'Анри Селин',
     pictureName: 'Дама с собачкой',
     about: 'Акрил, бумага (50х80) ',
     price: '16 500 руб',
+    pathToImg: './lady with a dog.jpg',
     },
     {
     pictureAuthor: 'Франсуа Дюпон',
     pictureName: 'Процедура',
     about: 'Цветная литография (40х60)',
     price: '20 000 руб',
+    pathToImg: './procedure.jpg',
     },
     {
     pictureAuthor: 'Луи Детуш',
     pictureName: 'Роза',
     about: 'Бумага, акрил (50х80)',
     price: '12 000 руб',
+    pathToImg: './rose.jpg',
     },
     {
     pictureAuthor: 'Франсуа Дюпон',
     pictureName: 'Птичья трапеза',
     about: 'Цветная литография (40х60)',
     price: '22 500 руб',
+    pathToImg: './bird`s meal.jpg',
     },
     {
     pictureAuthor: 'Пьер Моранж',
     pictureName: 'Пейзаж с рыбой',
     about: 'Цветная литография (40х60)',
     price: '20 000 руб',
+    pathToImg: './landscape with a fish.jpg',
     },
   ];
 
 mixin card(cardData)
   div
-    img
-      
+    img(src=`${cardData.pathToImg}` alt='Painting image' width='310' height='422')
     span= cardData.pictureAuthor
     b= cardData.pictureName
     span= cardData.about
@@ -52,3 +56,4 @@ mixin card(cardData)
 div
   each cardData in data
     +card(cardData)
+

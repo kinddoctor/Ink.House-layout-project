@@ -7,6 +7,7 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import pug from 'gulp-pug';
+import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 
 const compileSCSS = () => {
@@ -23,6 +24,12 @@ const compilePug = () => {
     .pipe(browserSync.stream());
 }
 
+const minifyImg = () => {
+  return src('src/img/frenchPaintings/*.jpg', { encoding: false })
+    .pipe(imagemin())
+    .pipe(dest('build/'));
+};
+
 const browserSyncJob = () => {
   browserSync.init({
     server: "build/"
@@ -32,6 +39,6 @@ const browserSyncJob = () => {
   watch('src/layout/*.pug', compilePug);
 }
 
-export const build = parallel(compileSCSS, compilePug);
+export const build = parallel(compileSCSS, compilePug, minifyImg);
 export const server = browserSyncJob;
 export const development = series(build, server);
