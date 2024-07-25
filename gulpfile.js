@@ -7,6 +7,7 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(dartSass);
 import pug from 'gulp-pug';
+import ttfToWoff2 from 'gulp-ttftowoff2';
 import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 
@@ -24,6 +25,12 @@ const compilePug = () => {
     .pipe(browserSync.stream());
 }
 
+const compileFonts = () => {
+  return src('src/**/*.ttf')
+    .pipe(ttfToWoff2())
+    .pipe(dest('build/'));
+};
+
 const minifyImg = () => {
   return src('src/**/*.jpg', { encoding: false })
     .pipe(imagemin())
@@ -39,6 +46,6 @@ const browserSyncJob = () => {
   watch('src/*.pug', compilePug);
 }
 
-export const build = parallel(compileSCSS, compilePug, minifyImg);
+export const build = parallel(compileSCSS, compilePug, compileFonts, minifyImg);
 export const server = browserSyncJob;
 export const development = series(build, server);
