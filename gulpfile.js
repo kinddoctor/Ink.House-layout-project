@@ -18,14 +18,14 @@ const compileSCSS = () => {
 }
 
 const compilePug = () => {
-  return src('src/layout/*.pug')
+  return src('src/*.pug')
     .pipe(pug())
     .pipe(dest('build/'))
     .pipe(browserSync.stream());
 }
 
 const minifyImg = () => {
-  return src('src/img/frenchPaintings/*.jpg', { encoding: false })
+  return src('src/**/*.jpg', { encoding: false })
     .pipe(imagemin())
     .pipe(dest('build/'));
 };
@@ -36,7 +36,7 @@ const browserSyncJob = () => {
   });
 
   watch('src/*.scss', compileSCSS);
-  watch('src/layout/*.pug', compilePug);
+  watch('src/*.pug', compilePug);
 }
 
 export const build = parallel(compileSCSS, compilePug, minifyImg);
