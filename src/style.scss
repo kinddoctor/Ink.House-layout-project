@@ -1,2 +1,43 @@
 @import "node_modules/normalize-scss/sass/normalize/import-now";
 
+$background-color: #f4f6f5;
+$light-green: #E1EDE6;
+$green: #598D66;
+$deep-green: #376B44;
+$stripes-color: #f4c9bf;
+$star-and-btn-color: #EEDB6D;
+
+@font-face {
+    font-weight: 500;
+    font-family: "Raleway";
+    src: url("./fonts/Raleway-Medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-weight: 700;
+    font-family: "Raleway";
+    src: url("./fonts/Raleway-Bold.woff2") format("woff2");
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  body {
+    font-family: 'font', sans-serif;
+  }
