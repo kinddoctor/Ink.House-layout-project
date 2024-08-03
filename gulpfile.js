@@ -40,7 +40,7 @@ const compileFonts = () => {
 };
 
 const minifyImg = () => {
-  return src('src/**/*.jpg', { encoding: false })
+  return src('src/**', { encoding: false })
     .pipe(imagemin())
     .pipe(dest('build/'));
 };
