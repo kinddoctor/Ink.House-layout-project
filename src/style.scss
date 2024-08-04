@@ -1,43 +1,301 @@
 @import "node_modules/normalize-scss/sass/normalize/import-now";
 
-$background-color: #f4f6f5;
+$base-white: #f4f6f5;
 $light-green: #E1EDE6;
 $green: #598D66;
 $deep-green: #376B44;
-$stripes-color: #f4c9bf;
-$star-and-btn-color: #EEDB6D;
+$grey: #86928B;
+$black: #2C2D35;
+$yellow: #EEDB6D;
 
 @font-face {
-    font-weight: 500;
-    font-family: "Raleway";
-    src: url("./fonts/Raleway-Medium.woff2") format("woff2");
-  }
+  font-weight: 500;
+  font-family: "Raleway";
+  src: url("./fonts/Raleway-Medium.woff2") format("woff2");
+}
 
-  @font-face {
-    font-weight: 700;
-    font-family: "Raleway";
-    src: url("./fonts/Raleway-Bold.woff2") format("woff2");
-  }
+@font-face {
+  font-weight: 700;
+  font-family: "Raleway";
+  src: url("./fonts/Raleway-Bold.woff2") format("woff2");
+}
 
-  html {
-    box-sizing: border-box;
-  }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+@mixin button-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px; 
+}
+
+@mixin square-button {
+  display: block;
+  border: solid 1px;
+  height: 65px;
+  color: $green;
+  background-color: transparent;
   
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
+  @include button-text
+}
+
+@mixin oval-button {
+  display: block;
+  height: 43px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 20px;
+
+  @include button-text
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  background-color: $base-white;
+}
+
+.container {
+  background-color: $light-green;
+  padding: 0 165px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 33px 0;
+  max-height: 100px;
+}
+
+.menu__list {
+  display: flex;
+  align-items: center;
+  gap: 0 60px;
+  max-width: 470px;
+  font-size: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 25px;
+  padding: 0 165px 70px 165px;
+}
+
+.top__image {
+  max-width: 540px;
+  max-height: 621px;
+}
+
+.top__info {
+  max-width: 540px;
+}
+
+.top__info-title {
+  font-weight: 500;
+  font-size: 60px;
+  margin: 0;
+  line-height: 66px;
+}
+
+.top__info-title--company-name {
+  color: $green;
+}
+
+.top__info-text {
+  font-size: 18px;
+  color: grey;
+  line-height: 27px;
+  margin: 18px 0 60px 0;
+}
+
+.top__info-button {
+  width: 225px;
+
+  @include square-button;
+}
+
+.main-content {
+  padding: 0 165px;
+}
+
+.main-content__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 44px;
+}
+
+.main-content__title-text {
+  font-size: 40px;
+  line-height: 44px;
+}
+
+.main-content__title-tab {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 32px;
+  max-width: 428px;
+}
+
+.main-content__title-tab-btn {  
+  @include oval-button;
+
+  background-color: $light-green;
+  color: $black;
+
+  &.active {
+    background-color: $deep-green;
+    color: $base-white;
   }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  body {
-    font-family: 'font', sans-serif;
-  }
+}
+
+label + input {
+  display: none;
+}
+
+.main-content__french-paintings-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px 0 50px 0;
+}
+
+.main-content__german-paintings-cards {
+  display: none;
+}
+
+.main-content__english-paintings-cards {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-height: 730px;
+  padding: 20px 20px 30px 20px;
+  background-color: $light-green;
+}
+
+.card__img {
+  padding: 0 0 25px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card__text-author {
+  margin: 0;
+  padding: 0 0 8px 0;
+  font-size: 18px;
+  color: $grey;
+}
+
+.card__text-name {
+  margin: 0;
+  padding: 0 0 8px 0;
+  font-size: 30px;
+  line-height: 35.22px;
+  color: $black;
+}
+
+.card__text-description {
+  margin: 0;
+  padding: 0 0 30px 0;
+  font-size: 18px;
+  line-height: 21.13px;
+}
+
+.card__text-price {
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 24px;
+  line-height: 28.18px; 
+  color: $green;
+}
+
+.card__button {
+  @include square-button
+}
+
+.advertisment {
+  width: 100%;
+  height: 574px;
+  background: no-repeat url("./img/pic_background.jpg");
+}
+
+.advertisment__content {
+  max-width: 705px;
+  padding: 70px 0 90px 165px;
+}
+
+.advertisment__content-title {
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+  max-height: 80px;
+  color: $base-white;
+}
+
+.advertisment__content-title-text {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.advertisment__content-text {
+  padding: 0 0 10px 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $base-white;
+}
+
+.content-text-2 {
+  padding: 0 0 33px 0;
+}
+
+.advertisment__content-button {
+  @include square-button;
+
+  width: 257px;
+  color: $black;
+  background-color: $yellow;
+}
+
+.team-section {
+
+  max-width: 1110px;
+  max-height: 440px;
+}

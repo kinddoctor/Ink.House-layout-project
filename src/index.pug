@@ -7,41 +7,91 @@ html(lang="ru")
     meta(name="description" content="")
     link(rel="stylesheet" type="text/css" href="style.css") 
   body
-    header
-      div //- logo
-        div
-        p Ink. House
-      nav
-        button Репродукции
-        button Новинки
-        button О нас
-        button
+    header(class="header")
+      div(class="container")
+        div(class="header__inner")
+          a(href="#", class="logo")
+            img(src="./img/icons/Logo.svg", alt="Ink.House")
+          nav(class="menu")
+            ul(class="menu__list")
+              li(class="menu__item")
+                a(href="#") Репродукции
+              li(class="menu__item")
+                a(href="#") Новинки
+              li(class="menu__item")
+                a(href="#") О нас
+              li(class="menu__item")
+                a(href="#")
+                  img(src="./img/icons/Cart.svg", alt="Cart")
     main
-      section
-        div //- background image
-        div
-          h1 Реплики картин от
-            span Ink. House
-          p.
+      section(class="top")
+        div(class="top__image")
+          img(src="./img/Pigeon.png", alt="pigeon")
+        div(class="top__info")
+          h1(class="top__info-title") Реплики картин от 
+            span(class="top__info-title--company-name") Ink. House
+          p(class="top__info-text").
             Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.
-          button Продукция
-      section
-        div //- подписи
-          span Репродукции
-          div
+          button(class="top__info-button") Продукция
+      section(class="main-content")
+        div(class="main-content__title")
+          p(class="main-content__title-text") Репродукции
+          div(class="main-content__title-tab")
             div
-              label(for="")
-              input
+              label(class="main-content__title-tab-btn active" for="tab-btn-french") Франция
+              input(id="tab-btn-french" name="tab-btn" type="radio")
             div
-              label(for="")
-              input
+              label(class="main-content__title-tab-btn" for="tab-btn-german") Германия
+              input(id="tab-btn-german" name="tab-btn" type="radio")
             div
-              label(for="")
-              input
-        div //- контейнер франц карточек
+              label(class="main-content__title-tab-btn" for="tab-btn-english") Англия
+              input(id="tab-btn-english" name="tab-btn" type="radio")
+        div(class="main-content__french-paintings-cards")
           include layoutPartials/frenchPaintings
-        div //- контейнер немец карточек
-        div //- контейнер англ карточек
+        div(class="main-content__german-paintings-cards")
+        div(class="main-content__english-paintings-cards")
+      section(class="advertisment")
+        div(class="advertisment__content")
+          div(class="advertisment__content-title")
+            img(src="./img/icons/Logo-empty.png", alt="asterisk")
+            h3(class="advertisment__content-title-text") Новая коллекция французских авторов
+          p(class="advertisment__content-text") Сложно сказать, почему акционеры крупнейших компаний призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+          p(class="advertisment__content-text content-text-2") Принимая во внимание показатели успешности, граница обучения кадров предопределяет высокую востребованность направлений прогрессивного развития.
+          button(class="advertisment__content-button") Ознакомиться
+      section(class="team-section")
+        img(src="", alt="")
+        div 
+          h3 Наша команда
+          p Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить значение экспериментов, поражающих по своей масштабности и грандиозности. Мы вынуждены отталкиваться от того, что консультация с широким активом.
+          div 
+            img(src="./img/Ellipse-Girl.png", alt="")
+            img(src="./img/Ellipse-Lil Guy.jpg", alt="")
+            img(src="./img/Ellipse-Guy.png", alt="")
+      footer 
+        div(class="logo")
+          img(src="", alt="")
+          p Ink. House
+        div 
+          span // телефон
+          span
+        div 
+            h5
+            link(rel="stylesheet", href="")
+            link(rel="stylesheet", href="")
+            link(rel="stylesheet", href="")
+        div 
+            h5
+            link(rel="stylesheet", href="")
+            link(rel="stylesheet", href="")
+        div 
+            h5
+            link(rel="stylesheet", href="")
+            link(rel="stylesheet", href="")
+        div
+          div
+            img(src="", alt="")
+            img(src="", alt="")
+            img(src="", alt="")
+          span 
+          span
           
-
-
