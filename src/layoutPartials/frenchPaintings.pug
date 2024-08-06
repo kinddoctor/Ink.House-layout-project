@@ -52,7 +52,7 @@ mixin card(cardData)
       p(class="card__text-name")= cardData.pictureName
       p(class="card__text-description")= cardData.about
       p(class="card__text-price")= cardData.price
-    button(class="card__button square-button") В корзину
+    button(class="card__button") В корзину
 
 each cardData in data
   +card(cardData)
