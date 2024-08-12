@@ -12,6 +12,7 @@ html(lang="ru")
         div(class="header__inner")
           a(href="#", class="logo")
             img(src="./img/icons/Logo.svg", alt="Ink.House Logo")
+          hr(class="header__inner-line line")
           nav(class="menu")
             ul(class="menu__list")
               li(class="menu__item")
@@ -20,7 +21,7 @@ html(lang="ru")
                 a(href="#") Новинки
               li(class="menu__item")
                 a(href="#") О нас
-              li(class="menu__item")
+              li(class="menu__item menu__item-cart")
                 a(href="#")
                   img(src="./img/icons/Cart.svg", alt="Cart")
     main
@@ -56,13 +57,17 @@ html(lang="ru")
       section(class="advertisment")
         div(class="advertisment__content")
           div(class="advertisment__content-title")
-            img(src="./img/icons/Logo-empty.png", alt="asterisk")
-            h3(class="advertisment__content-title-text") Новая коллекция французских авторов
+            img(class="advertisment__content-title-image" src="./img/icons/Logo-empty.png", alt="asterisk")
+            h3(class="advertisment__content-title-text") Новая коллекция
+              br
+              .
+                французских авторов
           p(class="advertisment__content-text") Сложно сказать, почему акционеры крупнейших компаний призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений.
           p(class="advertisment__content-text content-text-2") Принимая во внимание показатели успешности, граница обучения кадров предопределяет высокую востребованность направлений прогрессивного развития.
           button(class="advertisment__content-button") Ознакомиться
       section(class="team-section")
-        img(class="team-section__image" src="./img/frame and hand.png", alt="")
+        div(class="team-section__image")
+          img(src="./img/frame and hand.png", alt="")
         div(class="team-section__content")
           h3(class="team-section__content-title") Наша команда
           p(class="team-section__content-paragraph") Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить значение экспериментов, поражающих по своей масштабности и грандиозности. Мы вынуждены отталкиваться от того, что консультация с широким активом.
@@ -90,6 +95,7 @@ html(lang="ru")
             h5 О нас
             a(href="") Художники
             a(href="") Менеджеры
+          hr(class="footer__inner-line line")
           div(class="footer__social-media")
             img(src="./img/icons/Facebook-icon.svg", alt="Facebook icon")
             img(src="./img/icons/Instagram-icon.svg", alt="Instagram icon")

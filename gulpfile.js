@@ -34,7 +34,7 @@ const compilePug = () => {
 };
 
 const compileFonts = () => {
-  return src('src/**/*.ttf')
+  return src('src/**/*.ttf', { encoding: false })
     .pipe(ttfToWoff2())
     .pipe(dest('build/'));
 };

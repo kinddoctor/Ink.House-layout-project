@@ -5,6 +5,7 @@ $light-green: #E1EDE6;
 $green: #598D66;
 $deep-green: #376B44;
 $grey: #86928B;
+$light-grey: #C3D1C6;
 $black: #2C2D35;
 $yellow: #EEDB6D;
 
@@ -56,6 +57,11 @@ img {
   line-height: $line-height; 
 }
 
+@mixin text-medium-large($line-height: 1.1) {
+  font-size: 30px;
+  line-height: $line-height; 
+}
+
 @mixin text-medium($line-height: 1.15) {
   font-size: 20px;
   line-height: $line-height; 
@@ -93,41 +99,64 @@ body {
 }
 
 .container {
-  background-color: $light-green;
-  padding: 0 39px;
+  background-color: $light-green; 
+  padding: 0 11.5%;
 }
 
 .header__inner {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  padding: 33px 0;
-  max-height: 100px;
+  display: grid;
+  grid-template-areas: "logo . menu";
+  grid-template-columns: 2fr 1fr 4fr;
+  padding: 3% 0;
+  height: 100%;
 }
 
-.menu__list {
+.logo {
+  grid-area: logo;
+}
+
+.line {
+  display: none;
+  grid-area: line;
+  border-left: 0;
+  color: $light-grey;
+}
+
+.menu {
   display: flex;
+  justify-content: flex-end;
+  grid-area: menu;
+}
+
+.menu__list { 
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
   gap: 0 60px;
+  width: 100%;  
   max-width: 470px;
+  white-space: nowrap;
   
   @include text-medium
 }
 
 .top {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 0 25px;
-  padding: 0 165px 70px 165px;
+  //  padding на 1440px - 0 165px 70px 165px
+  padding: 0 11.5% 4.75% 11.5%;
 }
 
 .top__image {
+  width: 50%;
   max-width: 540px;
   max-height: 621px;
 }
 
 .top__info {
+  width: 50%;
   max-width: 540px;
 }
 
@@ -142,7 +171,7 @@ body {
 
 .top__info-text {
   color: grey;
-  margin: 18px 0 60px 0;
+  margin: 3.4% 0 11% 0;
 
   @include text-small
 }
@@ -154,18 +183,21 @@ body {
 }
 
 .main-content {
-  padding: 0 165px;
+  padding: 0 11.5%;
 }
 
 .main-content__title {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  max-height: 44px;
+  max-height: 100%;
 }
 
 .main-content__title-text {
   @include text-large;
+
+  padding-right: 10px;
 }
 
 .main-content__title-tab {
@@ -254,19 +286,26 @@ label + input {
 .advertisment {
   width: 100%;
   height: 574px;
+  padding: 70px 0 ;
   background: no-repeat url("./img/pic_background.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .advertisment__content {
-  max-width: 705px;
-  padding: 70px 0 70px 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+  height: 100%;
+  padding-left: 11.5%;
 }
 
 .advertisment__content-title {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
   gap: 0 20px;
   max-height: 80px;
   color: $base-white;
@@ -277,7 +316,6 @@ label + input {
 }
 
 .advertisment__content-text {
-  padding: 0 0 10px 0;
   color: $base-white;
 
   @include text-small;
@@ -298,10 +336,12 @@ label + input {
 .team-section {
   display: flex;
   justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0 30px;
-  padding: 70px 0 70px 165px;
-  max-width: 1275px;
-  max-height: 580px;
+  padding: 4.75% 3.6% 4.75% 11.5%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .team-section__image {
@@ -312,7 +352,7 @@ label + input {
 .team-section__content {
   padding: 124px 0 44px 0;
   max-width: 635px;
-  max-height: 272px;
+  max-height: 100%;
 }
 
 .team-section__content-title {
@@ -330,8 +370,8 @@ label + input {
 
 .footer {
   background-color: $light-green;
-  padding: 0 165px;
-  height: 168px;
+  padding: 0 11.5%;
+  height: 100%;
 }
   
 .footer__inner {
@@ -412,25 +452,254 @@ label + input {
   }
 }
 
-@media (max-width: 980) {
-  .menu__list {
-    font-size: 12px;
-    line-height: 1.6;
+@media (max-width: 1370px) {
+  .advertisment__content {
+    width: 700px;
+  }
+
+  .team-section {
+    padding: 4.75% 0 4.75% 5%;
   }
 }
 
-@media (max-width: 690) {
+@media (max-width: 1165px) {
+  .menu__list {
+    @include text-small(1.17);
+  }
 
+  .container, .main-content, .advertisment__content, .footer {
+    padding: 0 5%;
+  }
+
+ .top {
+    padding: 0 5% 4.75% 5%;
+  }
+
+  .top__info {
+    padding-top: 5%;
+  }
+
+  .top__info-title {
+   @include text-large(1);
+  }
+
+  .main-content__title-text {
+    @include text-medium-large;
+  }
+
+  .card {
+    max-width: 330px;
+  }
+
+  .advertisment__content-title-text {
+    @include text-medium-large(1);
+  }
+
+  .advertisment__content-title-image {
+    max-height: 60px;
+  }
+
+  .advertisment__content-button, .top__info-button {
+    width: 210px;
+    height: 60px;
+  }
+
+  .team-section__content {
+    padding: 40px 0 44px 0;
+  }
 }
 
-@media (max-width: 510) {
-  
+@media (max-width: 900px) {
+  .header__inner {
+    grid-template-columns: 1fr 0.5fr 4fr;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1.5fr 1fr 1.6fr 2fr;
+    grid-template-areas: "logo-img   .    .    contacts"
+                         "logo-img   .    .    contacts"
+                         "replica novelty about social-media"
+                         "replica novelty about copyrights"
+                         "replica novelty about copyrights"
+                         "replica   .      .       .";
+    max-height: 768px;
+  }
 }
 
-@media (max-width: 428) {
-  
+@media (max-width: 760px) {
+ .advertisment {
+    width: 100%;
+    height: 574px;
+    background: no-repeat url("./img/pic_background (more content in lower part).jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .advertisment__content {
+    width: 100%;  
+  }
 }
 
-@media (max-width: 320) {
+@media (max-width: 680px) {
+  .header__inner {
+    grid-template-areas: "logo"
+                          "line"
+                          "menu";
+    grid-template-rows: 2fr 1fr 2fr;
+    grid-template-columns: 1fr;
+    padding: 3% 0;
+    height: 100%;
+  }
+
+  .line {
+    display: block;
+    line-height: 0;
+    width: 100%;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+  .menu__list {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .menu__item-cart {
+    margin-left: auto;
+  }
+
+  .top__image {
+    width: 40%;
+    padding-top: 7%;
+  }
+
+  .top__info {
+    width: 60%;
+    padding-top: 9%;
+  }
+
+  .top__info-title {
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .top__info-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .advertisment__content-button, .top__info-button {
+    width: 178px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 1.17;
+  }
+
+  .main-content__title-text {
+    font-size: 24px;
+    line-height: 1.1;
+  }
   
+  .main-content__title-tab-btn {
+    @include text-small(1.17)
+  }
+
+  .card {
+    max-width: 240px;
+    max-height: 514px;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+
+  .card__img {
+    padding-bottom: 15px;
+    width: 200px;
+    height: 250px;
+  }
+
+  .card__text-name {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  .card__text-price {
+    @include text-medium;
+
+    padding-bottom: 10px;
+  }
+
+  .card__button {
+    height: 50px;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1.5fr 1.4fr 2fr;
+    grid-template-areas: "logo-img  .  contacts"
+                         "logo-img  .  contacts"
+                         "replica novelty about"
+                         "replica novelty about"
+                         "replica novelty about"
+                         "replica novelty about"
+                         "line     line     line"
+                         "social-media social-media social-media"
+                         "copyrights copyrights copyrights";
+    padding: 23px 0;
+  }
+
+  .footer__inner-novelty {
+    align-items: start;
+    margin: 0 auto;
+  }
+
+  .footer__inner-about {
+    margin-left: auto;
+  }
+
+  .footer__social-media, .footer__copyrights {
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 555px) {
+  .menu__list {
+    gap: 0 40px;
+  }
+
+  .top__info-title {
+    @include text-medium-large(1);
+  }
+
+  .team-section {
+    padding-right: 4.75%;
+  }
+
+  .team-section__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .advertisment {
+    padding: 50px 0;
+  }
+
+  .content-text-2 {
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 465px) {
+  .header__inner-line {
+    display: none;
+  }
+
+  // вот здесь продолжай (сделай мобилку)
+}
+
+@media (max-width: 320px) {
+  //нужен ли?
 }
