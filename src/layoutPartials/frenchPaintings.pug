@@ -1,16 +1,16 @@
 -
-  const data = [
+  const dataFrench = [
     { 
     pictureAuthor: 'Марсель Руссо',
     pictureName: 'Охота Амура',
-    about: 'Холст, масло (50х80) ',
+    about: 'Холст, масло (50х80)',
     price: '14 500 руб',
     pathToImg: 'img/frenchPaintings/amour`s hunt.jpg',
     },
     {
     pictureAuthor: 'Анри Селин',
     pictureName: 'Дама с собачкой',
-    about: 'Акрил, бумага (50х80) ',
+    about: 'Акрил, бумага (50х80)',
     price: '16 500 руб',
     pathToImg: 'img/frenchPaintings/lady with a dog.jpg',
     },
@@ -54,6 +54,6 @@ mixin card(cardData)
       p(class="card__text-price")= cardData.price
     button(class="card__button") В корзину
 
-each cardData in data
+each cardData in dataFrench
   +card(cardData)
 
