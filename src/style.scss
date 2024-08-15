@@ -1,6 +1,7 @@
 @import "node_modules/normalize-scss/sass/normalize/import-now";
 
 $base-white: #f4f6f5;
+$pure-white: #FFFFFF;
 $light-green: #E1EDE6;
 $green: #598D66;
 $deep-green: #376B44;
@@ -115,10 +116,15 @@ body {
   grid-area: logo;
 }
 
+.header__inner-menu-button {
+  display: none;
+}
+
 .line {
   display: none;
   grid-area: line;
   border-left: 0;
+  margin: 16px 0;
   color: $light-grey;
 }
 
@@ -146,18 +152,16 @@ body {
   align-items: center;
   gap: 0 25px;
   //  padding на 1440px - 0 165px 70px 165px
-  padding: 0 11.5% 4.75% 11.5%;
+  padding: 0 11.5% 2.5% 11.5%;
 }
 
 .top__image {
   width: 50%;
-  max-width: 540px;
   max-height: 621px;
 }
 
 .top__info {
   width: 50%;
-  max-width: 540px;
 }
 
 .top__info-title {
@@ -593,8 +597,8 @@ label + input {
   .advertisment__content-button, .top__info-button {
     width: 178px;
     height: 50px;
-    font-size: 18px;
-    line-height: 1.17;
+    
+    @include text-small(1.17);
   }
 
   .main-content__title-text {
@@ -603,7 +607,7 @@ label + input {
   }
   
   .main-content__title-tab-btn {
-    @include text-small(1.17)
+    @include text-small(1.17);
   }
 
   .card {
@@ -693,13 +697,125 @@ label + input {
 }
 
 @media (max-width: 465px) {
+  .container {
+    padding: 0;
+  }
+
+  .header__inner {
+    grid-template-areas: "logo      logo"
+                        "menu-button menu";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0;
+    max-height: 9em;
+  }
+
+  .header__inner-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    width: 100%;
+    height: 100%;
+    background-color: $pure-white;
+  }
+
   .header__inner-line {
     display: none;
   }
+  
+  .header__inner-menu-button {
+    display: block;
+    max-width: 50px;
+    max-height: 50px; 
+    border: none;
+    padding: 9% 2% 2% 8%;
+    background-color: transparent;
+  }
 
-  // вот здесь продолжай (сделай мобилку)
-}
+  .menu__item {
+    display: none;
+  }
 
-@media (max-width: 320px) {
-  //нужен ли?
+  .menu__item-cart {
+    display: inline;
+    padding: 3% 8%;
+  }
+
+  .top__image {
+    display: none;
+  }
+
+  .top__info {
+    width: 100%;
+  }
+
+  .top__info-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .advertisment__content-button, .top__info-button {
+    width: 154px;
+  }
+
+  .main-content__title-tab {
+    overflow: scroll;
+    column-gap: 20px;
+  }
+
+  .advertisment__content-title-text {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .advertisment__content-text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .advertisment__content-button {
+    width: 100%;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1.5fr 1.1fr;
+    grid-template-areas: "logo-img  logo-img"
+                         "contacts   replica"
+                         "contacts   replica"
+                         "    .      replica"
+                         "    .      replica"
+                         "    .         .   "
+                         "novelty    about"
+                         "novelty    about"
+                         "novelty    about" 
+                         "line       line"
+                         "social-media social-media"
+                         "copyrights copyrights";
+    h5, adress {
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    a {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+  }
+
+  .footer__inner-novelty, .footer__inner-about, .footer__inner-logo  {
+    margin: 0;
+  }
+
+  .footer__inner-logo {
+    margin-right: auto;
+  }
+
+  .footer__inner-novelty, .footer__inner-about {
+    h5 {
+      @include text-medium(1.7);
+
+      padding-top: 15px;
+    }
+  }
 }
