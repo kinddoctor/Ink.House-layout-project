@@ -53,10 +53,12 @@ html(lang="ru")
             div
               label(class="main-content__title-tab-btn" for="tab-btn-english") Англия
               input(id="tab-btn-english" name="tab-btn" type="radio")
-        div(class="main-content__french-paintings-cards")
+        div(id="content-french" class="main-content__french-paintings-cards tab-content")
           include layoutPartials/frenchPaintings
-        div(class="main-content__german-paintings-cards")
-        div(class="main-content__english-paintings-cards")
+        div(id="content-german" class="main-content__german-paintings-cards tab-content")
+          include layoutPartials/germanPaintings
+        div(id="content-english" class="main-content__english-paintings-cards tab-content")
+          include layoutPartials/englishPaintings
       section(class="advertisment")
         div(class="advertisment__content")
           div(class="advertisment__content-title")

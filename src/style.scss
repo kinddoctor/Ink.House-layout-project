@@ -223,11 +223,17 @@ body {
   }
 }
 
-label + input {
+label + input, .tab-content {
   display: none;
 }
 
-.main-content__french-paintings-cards {
+label {
+  cursor: pointer;
+}
+
+#tab-btn-french:checked~#content-french,
+#tab-btn-german:checked~#content-german,
+#tab-btn-english:checked~#content-english {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -235,13 +241,13 @@ label + input {
   padding: 30px 0 50px 0;
 }
 
-.main-content__german-paintings-cards {
-  display: none;
-}
-
-.main-content__english-paintings-cards {
-  display: none;
-}
+/*.main-content__french-paintings-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 30px 0 50px 0;
+} */
 
 .card {
   display: flex;
