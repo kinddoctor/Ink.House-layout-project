@@ -33,6 +33,12 @@ const compilePug = () => {
     .pipe(browserSync.stream());
 };
 
+const compileJS = () => {
+  return src('src/*.js')
+    .pipe(dest('build/'))
+    .pipe(browserSync.stream());
+};
+
 const compileFonts = () => {
   return src('src/**/*.ttf', { encoding: false })
     .pipe(ttfToWoff2())
@@ -54,7 +60,7 @@ const browserSyncJob = () => {
   watch('src/*.pug', compilePug);
 };
 
-export const build = parallel(compileSCSS, compilePug, compileFonts, minifyImg);
+export const build = parallel(compileSCSS, compilePug, compileJS, compileFonts, minifyImg);
 export const server = browserSyncJob;
 export const development = series(build, server);
 export const clean = cleanBuild;

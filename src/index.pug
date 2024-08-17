@@ -6,6 +6,7 @@ html(lang="ru")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(name="description" content="")
     link(rel="stylesheet" type="text/css" href="style.css") 
+    script(defer src="main.js")
   body
     header(class="header")
       div(class="container")
@@ -44,16 +45,10 @@ html(lang="ru")
         div(class="main-content__title")
           p(class="main-content__title-text") Репродукции
           div(class="main-content__title-tab")
-            div
-              label(class="main-content__title-tab-btn active" for="tab-btn-french") Франция
-              input(id="tab-btn-french" name="tab-btn" type="radio")
-            div
-              label(class="main-content__title-tab-btn" for="tab-btn-german") Германия
-              input(id="tab-btn-german" name="tab-btn" type="radio")
-            div
-              label(class="main-content__title-tab-btn" for="tab-btn-english") Англия
-              input(id="tab-btn-english" name="tab-btn" type="radio")
-        div(id="content-french" class="main-content__french-paintings-cards tab-content")
+            button(class="main-content__title-tab-btn active" data-link="content-french") Франция
+            button(class="main-content__title-tab-btn" data-link="content-german") Германия
+            button(class="main-content__title-tab-btn" data-link="content-english") Англия
+        div(id="content-french" class="main-content__french-paintings-cards tab-content active")
           include layoutPartials/frenchPaintings
         div(id="content-german" class="main-content__german-paintings-cards tab-content")
           include layoutPartials/germanPaintings
