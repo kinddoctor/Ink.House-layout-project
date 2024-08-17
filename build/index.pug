@@ -1,0 +1,106 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    title Ink.House Layout
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="")
+    link(rel="stylesheet" type="text/css" href="style.css") 
+    script(defer src="main.js")
+  body
+    header(class="header")
+      div(class="container")
+        div(class="header__inner")
+          div(class="logo header__inner-logo")
+            a(href="#", )
+              img(src="./img/icons/Logo.svg", alt="Ink.House Logo")
+          button(class="header__inner-menu-button")
+            img(src="./img/icons/Menu-icon.png", alt="menu button")
+          hr(class="header__inner-line line")
+          nav(class="menu")
+            ul(class="menu__list")
+              li(class="menu__item")
+                a(href="#") Репродукции
+              li(class="menu__item")
+                a(href="#") Новинки
+              li(class="menu__item")
+                a(href="#") О нас
+              li(class="menu__item menu__item-cart")
+                a(href="#")
+                  img(src="./img/icons/Cart.svg", alt="Cart")
+    main
+      section(class="top")
+        div(class="top__image")
+          img(src="./img/Pigeon.png", alt="pigeon")
+        div(class="top__info")
+          h1(class="top__info-title") Реплики картин
+            br
+            .
+              от 
+            span(class="top__info-title--company-name") Ink. House
+          p(class="top__info-text").
+            Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.
+          button(class="top__info-button") Продукция
+      section(class="main-content")
+        div(class="main-content__title")
+          p(class="main-content__title-text") Репродукции
+          div(class="main-content__title-tab")
+            button(class="main-content__title-tab-btn active" data-link="content-french") Франция
+            button(class="main-content__title-tab-btn" data-link="content-german") Германия
+            button(class="main-content__title-tab-btn" data-link="content-english") Англия
+        div(id="content-french" class="main-content__french-paintings-cards tab-content active")
+          include layoutPartials/frenchPaintings
+        div(id="content-german" class="main-content__german-paintings-cards tab-content")
+          include layoutPartials/germanPaintings
+        div(id="content-english" class="main-content__english-paintings-cards tab-content")
+          include layoutPartials/englishPaintings
+      section(class="advertisment")
+        div(class="advertisment__content")
+          div(class="advertisment__content-title")
+            img(class="advertisment__content-title-image" src="./img/icons/Logo-empty.png", alt="asterisk")
+            h3(class="advertisment__content-title-text") Новая коллекция
+              br
+              .
+                французских авторов
+          p(class="advertisment__content-text") Сложно сказать, почему акционеры крупнейших компаний призывают нас к новым свершениям, которые, в свою очередь, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+          p(class="advertisment__content-text content-text-2") Принимая во внимание показатели успешности, граница обучения кадров предопределяет высокую востребованность направлений прогрессивного развития.
+          button(class="advertisment__content-button") Ознакомиться
+      section(class="team-section")
+        div(class="team-section__image")
+          img(src="./img/frame and hand.png", alt="")
+        div(class="team-section__content")
+          h3(class="team-section__content-title") Наша команда
+          p(class="team-section__content-paragraph") Значимость этих проблем настолько очевидна, что базовый вектор развития позволяет оценить значение экспериментов, поражающих по своей масштабности и грандиозности. Мы вынуждены отталкиваться от того, что консультация с широким активом.
+          div(class="team-section__content-photos")
+            img(src="./img/Ellipse-Girl.png", alt="")
+            img(src="./img/Ellipse-Lil Guy.png", alt="")
+            img(src="./img/Ellipse-Guy.png", alt="")
+      footer(class="footer")
+        div(class="footer__inner")
+          a(class="footer__inner-logo" href= "#" class="logo")
+            img(src="./img/icons/Logo.svg", alt="Ink.House Logo")
+          div(class="footer__inner-contacts")
+            adress +7 (999) 543-54-54
+            span Мастерская
+          div(class="footer__inner-replica")
+            h5 Репродукции
+            a(href="") Франция
+            a(href="") Германия
+            a(href="") Англия
+          div(class="footer__inner-novelty")
+            h5 Новинки
+            a(href="") 2021
+            a(href="") 2020
+          div(class="footer__inner-about")
+            h5 О нас
+            a(href="") Художники
+            a(href="") Менеджеры
+          hr(class="footer__inner-line line")
+          div(class="footer__social-media")
+            img(src="./img/icons/Facebook-icon.svg", alt="Facebook icon")
+            img(src="./img/icons/Instagram-icon.svg", alt="Instagram icon")
+            img(src="./img/icons/Youtube-icon.svg", alt="Youtube icon")
+          div(class="footer__copyrights")
+            span Ink. House ®
+            span All rights reserved
+          
