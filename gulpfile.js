@@ -1,10 +1,6 @@
 /* eslint-disable arrow-body-style */
 
-import {
-  src, dest,
-  parallel, series,
-  watch,
-} from 'gulp';
+import { src, dest, parallel, series, watch } from 'gulp';
 import pug from 'gulp-pug';
 import ttfToWoff2 from 'gulp-ttftowoff2';
 import imagemin from 'gulp-imagemin';
@@ -20,8 +16,9 @@ const cleanBuild = () => {
 };
 
 const compileSCSS = () => {
-  return src('src/*.scss')
+  return src('src/index.scss')
     .pipe(sass())
+    .on('error', (e) => console.log(e))
     .pipe(dest('build/'))
     .pipe(browserSync.stream());
 };
@@ -34,9 +31,7 @@ const compilePug = () => {
 };
 
 const compileJS = () => {
-  return src('src/*.js')
-    .pipe(dest('build/'))
-    .pipe(browserSync.stream());
+  return src('src/*.js').pipe(dest('build/')).pipe(browserSync.stream());
 };
 
 const compileFonts = () => {
@@ -60,7 +55,13 @@ const browserSyncJob = () => {
   watch('src/*.pug', compilePug);
 };
 
-export const build = parallel(compileSCSS, compilePug, compileJS, compileFonts, minifyImg);
+export const build = parallel(
+  compileSCSS,
+  compilePug,
+  compileJS,
+  compileFonts,
+  minifyImg,
+);
 export const server = browserSyncJob;
 export const development = series(build, server);
 export const clean = cleanBuild;
