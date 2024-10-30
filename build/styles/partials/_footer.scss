@@ -1,0 +1,82 @@
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+.footer {
+  background-color: variables.$light-green;
+  padding: 0 11.5%;
+  height: 100%;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1.5fr 1.9fr 1.9fr 1.4fr;
+  grid-template-areas:
+    "logo-img replica novelty about . social-media"
+    "logo-img replica novelty about . copyrights"
+    "contacts replica novelty about . copyrights"
+    "contacts replica novelty about . copyrights";
+  padding: 23px 0;
+  max-height: 168px;
+
+  h5,
+  adress {
+    color: variables.$black;
+
+    @include mixins.text-medium(1.5);
+  }
+
+  a,
+  span {
+    color: variables.$grey;
+
+    @include mixins.text-small(1.8);
+  }
+}
+
+.footer__inner-logo {
+  grid-area: logo-img;
+  padding: 0 0 20px 0;
+}
+
+.footer__inner-contacts {
+  grid-area: contacts;
+
+  @include mixins.flex-items-column;
+}
+
+.footer__inner-replica {
+  grid-area: replica;
+
+  @include mixins.flex-items-column;
+}
+
+.footer__inner-novelty {
+  grid-area: novelty;
+
+  @include mixins.flex-items-column;
+}
+
+.footer__inner-about {
+  grid-area: about;
+
+  @include mixins.flex-items-column;
+}
+
+.footer__social-media {
+  grid-area: social-media;
+  display: flex;
+  gap: 0 32px;
+  align-items: center;
+  padding: 0 0 10px 0;
+}
+
+.footer__copyrights {
+  grid-area: copyrights;
+
+  @include mixins.flex-items-column;
+
+  span {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}

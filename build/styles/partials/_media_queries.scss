@@ -12,7 +12,7 @@
 }
 
 @media (max-width: 1165px) {
-  .menu__list, .menu__item-cart {
+  .menu__list {
     @include mixins.text-small(1.17);
   }
 
@@ -225,7 +225,7 @@
 
 @media (max-width: 555px) {
   .menu__list {
-    gap: 0 22px;
+    gap: 0 40px;
   }
 
   .top__info-title {

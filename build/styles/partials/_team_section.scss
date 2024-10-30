@@ -1,0 +1,37 @@
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+.team-section {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 30px;
+  padding: 4.75% 3.6% 4.75% 11.5%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.team-section__image {
+  max-width: 440px;
+  max-height: 445px;
+}
+
+.team-section__content {
+  padding: 124px 0 44px 0;
+  max-width: 635px;
+  max-height: 100%;
+}
+
+.team-section__content-title {
+  @include mixins.text-large;
+}
+
+.team-section__content-paragraph {
+  @include mixins.text-small;
+}
+
+.team-section__content-photos {
+  display: flex;
+  gap: 0 30px;
+}

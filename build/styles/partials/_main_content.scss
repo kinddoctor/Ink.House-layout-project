@@ -1,0 +1,101 @@
+@use "../utilities/variables";
+@use "../utilities/mixins";
+
+.main-content {
+  padding: 0 11.5%;
+}
+
+.main-content__title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 100%;
+}
+
+.main-content__title-text {
+  @include mixins.text-large;
+
+  padding-right: 10px;
+}
+
+.main-content__title-tab {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 32px;
+  max-width: 428px;
+}
+
+.main-content__title-tab-btn {
+  @include mixins.oval-button;
+
+  background-color: variables.$light-green;
+  color: variables.$black;
+  border: 0;
+  cursor: pointer;
+
+  &.active {
+    background-color: variables.$deep-green;
+    color: variables.$base-white;
+  }
+}
+
+label + input {
+  display: none;
+}
+
+.tab-content {
+  display: none;
+
+  &.active {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px 0 50px 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-height: 730px;
+  padding: 20px 20px 30px 20px;
+  background-color: variables.$light-green;
+
+  @include mixins.text-small(1.17);
+}
+
+.card__img {
+  padding: 0 0 25px 0;
+}
+
+.card__text-author {
+  margin: 0;
+  padding: 0 0 8px 0;
+  color: variables.$grey;
+}
+
+.card__text-name {
+  margin: 0;
+  padding: 0 0 8px 0;
+  font-size: 30px;
+  color: variables.$black;
+}
+
+.card__text-description {
+  margin: 0;
+  padding: 0 0 30px 0;
+}
+
+.card__text-price {
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 24px;
+  color: variables.$green;
+}
+
+.card__button {
+  @include mixins.square-button;
+}
