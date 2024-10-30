@@ -51,7 +51,7 @@ const browserSyncJob = () => {
     server: 'build/',
   });
 
-  watch('src/*.scss', compileSCSS);
+  watch('src/**/*.scss', compileSCSS);
   watch('src/*.pug', compilePug);
 };
 

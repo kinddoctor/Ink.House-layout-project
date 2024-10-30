@@ -1,6 +1,11 @@
 @use "../utilities/variables";
 @use "../utilities/mixins";
 
+.header {
+  position: sticky;
+  top: 0px;
+}
+
 .header__inner {
   display: grid;
   grid-template-areas: "logo . menu";
