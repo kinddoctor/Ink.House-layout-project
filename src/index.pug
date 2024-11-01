@@ -7,9 +7,10 @@ html(lang="ru")
     meta(name="description" content="")
     link(rel="stylesheet" type="text/css" href="index.css") 
     script(defer src="main.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")
   body
     header(class="header")
-      div(class="container")
+      div(class="container-shell")
         div(class="header__inner")
           div(class="header__inner-logo logo")
             a(href="#", )
@@ -24,10 +25,21 @@ html(lang="ru")
               li(class="menu__item")
                 a(href="#") О нас
               li(class="menu__item")
-                button(class="header__btn") Сделать заявку
+                button(class="header__btn" data-bs-toggle="modal" data-bs-target="#requestModal") Сделать заявку
               li(class="menu__item menu__item-cart")
                 a(href="#")
                   img(src="./img/icons/Cart.svg", alt="Cart")
+    div(class="modal" tabindex='-1' class="modal fade" id="requestModal" aria-labelledby="requestModalLabel" aria-hidden="true")
+      div(class="modal-dialog")
+        div(class="modal-content")
+          div(class="modal-header")
+            h5(class="modal-title") Modal title
+            button(class="btn-close" type='button' data-bs-dismiss='modal' aria-label='Close')
+          div(class="modal-body")
+            p Modal body text goes here.
+          div(class="modal-footer")
+            button(class="btn btn-secondary" type='button' data-bs-dismiss='modal') Close
+            button(class="btn btn-primary" type='button') Save changes
     main
       section(class="top")
         div(class="top__image")
@@ -48,11 +60,11 @@ html(lang="ru")
             button(class="main-content__title-tab-btn active" data-link="content-french") Франция
             button(class="main-content__title-tab-btn" data-link="content-german") Германия
             button(class="main-content__title-tab-btn" data-link="content-english") Англия
-        div(id="content-french" class="main-content__french-paintings-cards tab-content active")
+        div(id="content-french" class="main-content__french-paintings-my-cards tab-content active")
           include layoutPartials/frenchPaintings
-        div(id="content-german" class="main-content__german-paintings-cards tab-content")
+        div(id="content-german" class="main-content__german-paintings-my-cards tab-content")
           include layoutPartials/germanPaintings
-        div(id="content-english" class="main-content__english-paintings-cards tab-content")
+        div(id="content-english" class="main-content__english-paintings-my-cards tab-content")
           include layoutPartials/englishPaintings
       section(class="advertisment")
         div(class="advertisment__content")

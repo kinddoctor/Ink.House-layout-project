@@ -1,0 +1,11 @@
+@use "./styles/utilities/mixins";
+@use "./styles/utilities/variables";
+@use "node_modules/bootstrap/scss/bootstrap";
+
+.modal {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

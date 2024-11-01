@@ -45,14 +45,14 @@
   ];
 
 mixin card(cardData)
-  div(class="card")
-    img(class="card__img" src=`${cardData.pathToImg}` alt='Painting image')
-    div(class="card__text")
-      p(class="card__text-author")= cardData.pictureAuthor
-      p(class="card__text-name")= cardData.pictureName
-      p(class="card__text-description")= cardData.about
-      p(class="card__text-price")= cardData.price
-    button(class="card__button") В корзину
+  div(class="my-card")
+    img(class="my-card__img" src=`${cardData.pathToImg}` alt='Painting image')
+    div(class="my-card__text")
+      p(class="my-card__text-author")= cardData.pictureAuthor
+      p(class="my-card__text-name")= cardData.pictureName
+      p(class="my-card__text-description")= cardData.about
+      p(class="my-card__text-price")= cardData.price
+    button(class="my-card__button") В корзину
 
 each cardData in dataEnglish
   +card(cardData)

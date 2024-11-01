@@ -26,8 +26,10 @@
   display: none;
   grid-area: line;
   border-left: 0;
+  border-style: inset;
   margin: 16px 0;
   color: variables.$light-grey;
+  opacity: 1;
 }
 
 .menu {

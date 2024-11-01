@@ -16,7 +16,7 @@
     @include mixins.text-small(1.17);
   }
 
-  .container,
+  .container-shell,
   .main-content,
   .advertisment__content,
   .footer {
@@ -39,7 +39,7 @@
     @include mixins.text-medium-large;
   }
 
-  .card {
+  .my-card {
     max-width: 330px;
   }
 
@@ -163,31 +163,31 @@
     @include mixins.text-small(1.17);
   }
 
-  .card {
+  .my-card {
     max-width: 240px;
     max-height: 514px;
     font-size: 16px;
     line-height: 1.18;
   }
 
-  .card__img {
+  .my-card__img {
     padding-bottom: 15px;
     width: 200px;
     height: 250px;
   }
 
-  .card__text-name {
+  .my-card__text-name {
     font-size: 24px;
     line-height: 1.17;
   }
 
-  .card__text-price {
+  .my-card__text-price {
     @include mixins.text-medium;
 
     padding-bottom: 10px;
   }
 
-  .card__button {
+  .my-card__button {
     height: 50px;
   }
 
@@ -252,7 +252,7 @@
 }
 
 @media (max-width: 465px) {
-  .container {
+  .container-shell {
     padding: 0;
   }
 

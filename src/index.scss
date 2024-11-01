@@ -1,3 +1,5 @@
+@use "node_modules/bootstrap/scss/bootstrap";
+@use "./styles/partials/_modal";
 @use "node_modules/normalize-scss/sass/normalize/import-now";
 @use "./styles/partials/_basic";
 @use "./styles/partials/_header";

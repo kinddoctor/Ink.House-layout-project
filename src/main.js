@@ -1,14 +1,16 @@
 const tabButtons = document.querySelectorAll('.main-content__title-tab-btn');
 const tabs = document.querySelectorAll('.tab-content');
-const deactivateElements = (elements) => elements.forEach((el) => el.classList.remove('active'));
+
 const activateElement = (element) => element.classList.add('active');
-const findRelatedTab = (id) => document.querySelector(`#${id}`);
+const deactivateElement = (element) => element.classList.remove('active');
+const findRelatedElement = (id) => document.querySelector(`#${id}`);
 
 tabButtons.forEach((btn) => {
   btn.addEventListener('click', ({ target }) => {
-    deactivateElements(tabButtons);
+    tabButtons.forEach((el) => deactivateElement(el));
+    tabs.forEach((el) => deactivateElement(el));
+    const relatedTab = findRelatedElement(target.getAttribute('data-link'));
     activateElement(target);
-    deactivateElements(tabs);
-    activateElement(findRelatedTab(target.getAttribute('data-link')));
+    activateElement(relatedTab);
   });
 });
