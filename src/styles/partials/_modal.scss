@@ -1,7 +1,100 @@
 @use "./styles/utilities/mixins";
 @use "./styles/utilities/variables";
-@use "node_modules/bootstrap/scss/bootstrap";
+
+$primary: #0078CF;
+$secondary: #FFFFFF;
+$modal-content-border-radius: 4px;
+$form-label-color: #2E3238;
+$input-color: #2E3238;
+$input-bg:  #FCFCFD;
+$input-font-family: "Open Sans";
+$input-font-size: 14px;
+$btn-border-radius: 4px;
+$btn-font-family:  "Open Sans";
+$btn-font-weight: 600;
+$btn-font-size: 14px;
+$btn-close-padding-x: 3px;
+$border-color: #D5D8DD;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 1000;
+  src: url("./fonts/Montserrat-VariableFont_wght.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 100 1000;
+  src: url("./fonts/OpenSans-VariableFont_wdth,wght.ttf") format("woff2");
+}
 
 .modal-header, .modal-footer {
   border: 0;
 }
+
+.modal-title {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.modal__btn-top {
+  display: none;
+}
+@include media-breakpoint-up(md) {
+  .modal__btn-top {
+    display: block;
+  }
+}
+
+.modal-body__title {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.title__btn-close {
+  opacity: 1;
+  color: #2E3238;
+}
+
+label {
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 600;
+  color: #2E3238;
+}
+
+select {
+  height: auto;
+}
+
+option.border {
+  display: block;
+  position: relative;
+  width: max-content;
+  background-color: #E5F4FF;
+  border-color: #99D5FF !important;
+  border-radius: 4px;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+option::after {
+  position: absolute;
+  right: 5px;
+  top: 1px;
+  content: '\2715';
+  color: #2E3238;
+  font-size: 12px;
+  font-weight: 600;
+}
+

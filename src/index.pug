@@ -30,16 +30,52 @@ html(lang="ru")
                 a(href="#")
                   img(src="./img/icons/Cart.svg", alt="Cart")
     div(class="modal" tabindex='-1' class="modal fade" id="requestModal" aria-labelledby="requestModalLabel" aria-hidden="true")
-      div(class="modal-dialog")
+      div(class="modal-dialog modal-lg")
         div(class="modal-content")
           div(class="modal-header")
-            h5(class="modal-title") Modal title
-            button(class="btn-close" type='button' data-bs-dismiss='modal' aria-label='Close')
+            h5(class="modal-title") Подать заявку
+            button(class="btn btn-primary modal__btn-top ms-auto" type='button') Сохранить
+            button(class="btn btn-secondary modal__btn-top ms-1 border" type='button' data-bs-dismiss='modal') Отменить
+            button(class="btn-close title__btn-close d-md-none border rounded-1" type='button' data-bs-dismiss='modal' aria-label='Close')
           div(class="modal-body")
-            p Modal body text goes here.
-          div(class="modal-footer")
-            button(class="btn btn-secondary" type='button' data-bs-dismiss='modal') Close
-            button(class="btn btn-primary" type='button') Save changes
+            h6(class="modal-body__title") Новая заявка
+            form
+              div(class="mb-3")
+                label(class="form-label" for="pictureName") Название картины
+                input(class="form-control form-control-sm rounded-1" id="pictureName")
+              div(class="mb-3")
+                label(class="form-label" for="pictureAuthor") Автор картины
+                input(class="form-control form-control-sm rounded-1" id="pictureAuthor")
+              label(class="form-label" for="size") Размер  
+              div(class="input-group input-group-sm mb-3")
+                input(class="form-control rounded-1" id="size")
+                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="line-height: 0")
+                  img(src="img/icons/search.svg")
+              label(class="form-label" for="timeFrame") Желаемые сроки  
+              div(class="input-group input-group-sm mb-3")
+                input(class="form-control rounded-1" id="timeFrame")
+                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="line-height: 0")
+                  img(src="img/icons/calendar.svg")
+              div(class="mb-3")
+                label(class="form-label" for="phoneNumber") Контактный телефон
+                input(class="form-control form-control-sm rounded-1" id="phoneNumber")
+              div(class="mb-3")
+                label(class="form-label" for="clientName") Представьтесь, пожалуйста
+                input(class="form-control form-control-sm rounded-1" id="clientName")
+              label(class="form-label" for="extraRequirements") Дополнительные пожелания 
+              div(class="input-group input-group-sm")
+                select(class="form-select rounded-1 d-flex flex-wrap px-1" multiple id="extraRequirements")
+                  option(class="border pe-4") Изменить цветовую палитру
+                  option(class="border pe-4") Приглушить тона
+                  option(class="border pe-4") Добавить растительности
+                  option(class="border pe-4") Пририсовать хомяка в случайном месте
+                button(class="btn btn-secondary border ms-1 px-2 rounded-1" style="height: 32px; line-height: 0")
+                  img(src="img/icons/plus.svg")
+                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="height: 32px; line-height: 0")
+                  img(src="img/icons/search.svg")
+          div(class="modal-footer pt-0")
+            button(class="btn btn-primary d-md-none" style="width: 98%" type='button') Сохранить
+            button(class="btn btn-secondary border d-md-none" style="width: 98%" type='button' data-bs-dismiss='modal') Отменить
     main
       section(class="top")
         div(class="top__image")
