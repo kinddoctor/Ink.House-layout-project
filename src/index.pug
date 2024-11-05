@@ -30,48 +30,49 @@ html(lang="ru")
                 a(href="#")
                   img(src="./img/icons/Cart.svg", alt="Cart")
     div(class="modal" tabindex='-1' class="modal fade" id="requestModal" aria-labelledby="requestModalLabel" aria-hidden="true")
-      div(class="modal-dialog modal-lg")
+      div(class="modal-dialog modal-lg modal-fullscreen-md-down")
         div(class="modal-content")
           div(class="modal-header")
-            h5(class="modal-title") Подать заявку
-            button(class="btn btn-primary modal__btn-top ms-auto" type='button') Сохранить
-            button(class="btn btn-secondary modal__btn-top ms-1 border" type='button' data-bs-dismiss='modal') Отменить
-            button(class="btn-close title__btn-close d-md-none border rounded-1" type='button' data-bs-dismiss='modal' aria-label='Close')
+            h5(class="modal-title d-none d-md-block") Подать заявку
+            h5(class="modal-title--mobile d-md-none") ПОДАТЬ ЗАЯВКУ
+            button(class="btn btn-primary d-none d-md-block ms-auto" type='button') Сохранить
+            button(class="btn btn-secondary d-none d-md-block ms-1 border" type='button' data-bs-dismiss='modal') Отменить
+            button(class="btn-close title__btn-close d-md-none border" type='button' data-bs-dismiss='modal' aria-label='Close')
           div(class="modal-body")
             h6(class="modal-body__title") Новая заявка
             form
               div(class="mb-3")
-                label(class="form-label" for="pictureName") Название картины
+                label(class="form-label label-required" for="pictureName") Название картины
                 input(class="form-control form-control-sm rounded-1" id="pictureName")
               div(class="mb-3")
-                label(class="form-label" for="pictureAuthor") Автор картины
+                label(class="form-label label-required" for="pictureAuthor") Автор картины
                 input(class="form-control form-control-sm rounded-1" id="pictureAuthor")
               label(class="form-label" for="size") Размер  
               div(class="input-group input-group-sm mb-3")
                 input(class="form-control rounded-1" id="size")
-                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="line-height: 0")
+                button(class="btn btn-secondary icon border ms-1 px-1 rounded-1")
                   img(src="img/icons/search.svg")
               label(class="form-label" for="timeFrame") Желаемые сроки  
               div(class="input-group input-group-sm mb-3")
                 input(class="form-control rounded-1" id="timeFrame")
-                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="line-height: 0")
+                button(class="btn btn-secondary icon border ms-1 px-1 rounded-1")
                   img(src="img/icons/calendar.svg")
               div(class="mb-3")
-                label(class="form-label" for="phoneNumber") Контактный телефон
+                label(class="form-label label-required" for="phoneNumber") Контактный телефон
                 input(class="form-control form-control-sm rounded-1" id="phoneNumber")
               div(class="mb-3")
-                label(class="form-label" for="clientName") Представьтесь, пожалуйста
+                label(class="form-label label-required" for="clientName") Представьтесь, пожалуйста
                 input(class="form-control form-control-sm rounded-1" id="clientName")
               label(class="form-label" for="extraRequirements") Дополнительные пожелания 
               div(class="input-group input-group-sm")
                 select(class="form-select rounded-1 d-flex flex-wrap px-1" multiple id="extraRequirements")
-                  option(class="border pe-4") Изменить цветовую палитру
-                  option(class="border pe-4") Приглушить тона
-                  option(class="border pe-4") Добавить растительности
-                  option(class="border pe-4") Пририсовать хомяка в случайном месте
-                button(class="btn btn-secondary border ms-1 px-2 rounded-1" style="height: 32px; line-height: 0")
+                  option(class="border") Изменить цветовую палитру
+                  option(class="border") Приглушить тона
+                  option(class="border") Добавить растительности
+                  option(class="border") Пририсовать хомяка в случайном месте
+                button(class="btn btn-secondary icon border ms-1 px-2 rounded-1")
                   img(src="img/icons/plus.svg")
-                button(class="btn btn-secondary border ms-1 px-1 rounded-1" style="height: 32px; line-height: 0")
+                button(class="btn btn-secondary icon border ms-1 px-1 rounded-1")
                   img(src="img/icons/search.svg")
           div(class="modal-footer pt-0")
             button(class="btn btn-primary d-md-none" style="width: 98%" type='button') Сохранить

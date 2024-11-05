@@ -1,15 +1,18 @@
 @use "./styles/utilities/mixins";
 @use "./styles/utilities/variables";
 
+$basic-grey: #2E3238;
+$basic-border-radius: 4px;
+
 $primary: #0078CF;
 $secondary: #FFFFFF;
-$modal-content-border-radius: 4px;
-$form-label-color: #2E3238;
-$input-color: #2E3238;
+$modal-content-border-radius: $basic-border-radius;
+$form-label-color: $basic-grey;
+$input-color: $basic-grey;
 $input-bg:  #FCFCFD;
 $input-font-family: "Open Sans";
 $input-font-size: 14px;
-$btn-border-radius: 4px;
+$btn-border-radius: $basic-border-radius;
 $btn-font-family:  "Open Sans";
 $btn-font-weight: 600;
 $btn-font-size: 14px;
@@ -36,19 +39,24 @@ $border-color: #D5D8DD;
   border: 0;
 }
 
+@include media-breakpoint-up(md) {
+  .modal-header {
+    padding: 24px;
+  }
+}
+
 .modal-title {
   font-family: "Montserrat";
   font-weight: 400;
   font-size: 20px;
+  color: $basic-grey;
 }
 
-.modal__btn-top {
-  display: none;
-}
-@include media-breakpoint-up(md) {
-  .modal__btn-top {
-    display: block;
-  }
+.modal-title--mobile {
+  font-family: "Open Sans";
+  font-weight: 600;
+  font-size: 14px;
+  color: #5C6470;
 }
 
 .modal-body__title {
@@ -57,21 +65,57 @@ $border-color: #D5D8DD;
   font-size: 24px;
   margin-bottom: 16px;
 }
+@include media-breakpoint-down(md) {
+  .modal-body__title {
+    font-size: 20px;
+  }
+}
 
 .title__btn-close {
   opacity: 1;
-  color: #2E3238;
+  color: $basic-grey;
+  margin-right: 1px !important;
+  border-radius: $basic-border-radius;
+}
+
+.btn.btn-secondary {
+  color: $basic-grey;
+
+  &.icon {
+    height: 32px;
+    line-height: 0;
+  }
 }
 
 label {
+  position: relative;
   font-family: "Open Sans";
   font-size: 14px;
   font-weight: 600;
-  color: #2E3238;
+  color: $basic-grey;
+}
+
+.label-required {
+  padding-left: 10px;
+}
+
+.label-required::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '*';
+  color: #B21F00;
 }
 
 select {
-  height: auto;
+  position: relative;
+}
+
+select:after {
+  content: url(img/icons/close-circle.svg);
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 
 option.border {
@@ -84,16 +128,18 @@ option.border {
   max-width: 60%;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 27px !important;
+  padding-left: 8px !important;
   margin-right: 4px;
   margin-bottom: 4px;
 }
 
 option::after {
   position: absolute;
-  right: 5px;
+  right: 8px;
   top: 1px;
   content: '\2715';
-  color: #2E3238;
+  color: $basic-grey;
   font-size: 12px;
   font-weight: 600;
 }

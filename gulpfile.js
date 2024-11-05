@@ -53,6 +53,7 @@ const browserSyncJob = () => {
 
   watch('src/**/*.scss', compileSCSS);
   watch('src/*.pug', compilePug);
+  watch('src/*.js', compileJS);
 };
 
 export const build = parallel(
