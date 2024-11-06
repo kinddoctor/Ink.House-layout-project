@@ -1,4 +1,11 @@
-This is an adaptive layout for the website that offers picture reproductions. 
-*The buttons for selecting a country are interactive*
+## Адаптивная верстка сайта для магазина по продаже репродукций
 
-Take a look: https://kinddoctor.github.io/Ink.House-layout-project/
+**Характеристики и фишки:**
+
+- "резиновая" верстка, сохраняющая презентабельный вид сайта как мобильных устройствах (>320px), так и на больших экранах (>1440px)
+
+- интерактивные кнопки для переключения подборок картин из разных стран
+
+- модальное окно (открывается при нажатии на кнопку "Сделать заявку"), содержащее в себе различные виды полей, в т.ч. поле мультиселекта
+
+Посмотреть в браузере - https://kinddoctor.github.io/Ink.House-layout-project/
