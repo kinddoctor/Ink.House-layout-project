@@ -260,7 +260,7 @@
     grid-template-areas:
       "logo      logo"
       "menu-button menu";
-    grid-template-columns: 0.55fr 1.45fr;
+    grid-template-columns: 0.40fr 1.6fr;
     grid-template-rows: 1fr 1fr;
     padding: 0;
     max-height: 9em;
@@ -290,14 +290,20 @@
     background-color: transparent;
   }
 
+  .menu-list {
+    column-gap: 15px;
+  }
+
   .menu__item {
     display: none;
   }
 
   .menu__item-cart, .request_button {
     display: inline;
-    padding: 3% 8%;
-    margin-left: 0;
+    padding-right: 7px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: 5%;
   }
 
   .top__image {
